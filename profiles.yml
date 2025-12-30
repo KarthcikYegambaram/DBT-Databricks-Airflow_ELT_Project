@@ -1,0 +1,30 @@
+Dbt_DB_Project:
+  outputs:
+    dev:
+      catalog: workspace
+      host: dbc-5265dcc1-76fd.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/bc65987b2a872e62
+      schema: default
+      threads: 3
+      token: dapie8ac7e7b6bbc86ef68caee179a467a47
+      type: databricks
+
+    dev_2:
+      catalog: workspace
+      host: dbc-5265dcc1-76fd.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/bc65987b2a872e62
+      schema: scd_incremental
+      threads: 3
+      token: dapie8ac7e7b6bbc86ef68caee179a467a47
+      type: databricks
+
+    dev_3:
+      catalog: workspace
+      host: dbc-5265dcc1-76fd.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/bc65987b2a872e62
+      schema: analytics
+      threads: 3
+      token: dapie8ac7e7b6bbc86ef68caee179a467a47
+      type: databricks
+    
+  target: dev

@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: raw
+    database: workspace    # <-- CATALOG workspace
+    schema: default        # <--  SCHEMA default
+    tables:
+      - name: clinical_raw
+    
+
+  - name : scd 
+    database: workspace    # <-- CATALOG workspace
+    schema: scd_incremental        # <--  SCHEMA scd_incremental
+    tables: 
+      - name: scd_raw
+      

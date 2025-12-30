@@ -1,0 +1,35 @@
+name: 'Dbt_DB_Project'
+version: '1.0.0'
+profile: 'Dbt_DB_Project'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  Dbt_DB_Project:
+    
+    staging:
+      +materialized: table
+      
+    demo:
+      +materialized: table
+      +post-hook:
+        - "{{ log_audit_entry() }}" 
+
+    marts:
+      +materialized: table
+      +post-hook:
+        - "{{ log_audit_entry() }}"
+    
+    demo_scd:
+      +materialized: table
+      +post-hook:
+        - "{{ log_audit_entry() }}" 
